@@ -81,7 +81,7 @@ export default function Tabs({
     <>
       {/* Mobile Sidebar (Modal) */}
       <div
-        className={`fixed inset-0 z-50 bg-black bg-opacity-40 transition-opacity duration-300
+        className={`fixed inset-0 z-50 bg-black/40 backdrop-blur transition-opacity duration-300
           ${
             isMobile && modalOpen
               ? "opacity-100 pointer-events-auto"
