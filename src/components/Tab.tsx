@@ -75,6 +75,8 @@ export default function Tabs({
     </nav>
   );
 
+  
+
   // --- Sidebar Transitions ---
   // Both sidebars are always rendered, but only one is visible at a time with transitions
   return (
