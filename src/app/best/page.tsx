@@ -4,7 +4,7 @@ import StoryCard from "@/components/StoryCard";
 import React from "react";
 import { useStories } from "@/hooks/useStories";
 import { daysDiff } from "../utils/utils";
-import { StoryType } from "../enums/enums";
+import { StoryType } from "../../enums/enums";
 import PageLayout from "@/components/PageLayout";
 
 export default function page() {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getStoryIds, getItem } from "@/app/api/api";
-import { StoryType } from "@/app/enums/enums";
+import { StoryType } from "@/enums/enums";
 
 export function useStories(type: StoryType) {
   const [stories, setStories] = useState<any[]>([]);

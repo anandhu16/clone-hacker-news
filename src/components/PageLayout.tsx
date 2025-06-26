@@ -9,7 +9,7 @@ export default function PageLayout({
   const { minimized, setMinimized, modalOpen, setModalOpen, isMobile } =
     useAppShell();
   return (
-    <div className="flex flex-col flex-1 bg-inherit overflow-y-hidden h-screen">
+    <div className="flex flex-col flex-1 bg-inherit overflow-y-auto h-screen">
       <div className="flex text-xl border-b-1 border-gray-200 top-0 left-0 w-full bg-inherit">
         <div className="flex max-w-screen-md p-3 md:px-0 w-full md:mx-auto">
           <div className="border border-gray-300 rounded mr-2 flex justify-center items-center hover:bg-gray-200">

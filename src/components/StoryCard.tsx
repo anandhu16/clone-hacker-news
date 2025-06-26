@@ -32,13 +32,15 @@ export default function StoryCard({
           <span className="flex-4">🕰️ {timeAgo}</span>
         </div>
         <div className="flex mb-2 gap-2">
-          <a className="max-md:flex-1 flex" href={url}>
-            <button
-              data-slot="button"
-              className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 flex-1">
-              Read
-            </button>
-          </a>
+          {url && (
+            <a className="max-md:flex-1 flex" href={url}>
+              <button
+                data-slot="button"
+                className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 flex-1">
+                Read
+              </button>
+            </a>
+          )}
           <a className="max-md:flex-1 flex" href={`/${id}`}>
             <button
               data-slot="button"

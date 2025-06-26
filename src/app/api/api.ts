@@ -16,12 +16,22 @@ export async function getItem(id: number): Promise<any> {
   return res.json();
 }
 
+// Fetch only top-level comments without recursive replies
+export async function getTopLevelComments(
+  commentIds: number[]
+): Promise<any[]> {
+  const comments = await Promise.all(commentIds.map(getItem));
+  return comments.filter(
+    (comment) => comment && !comment.deleted && !comment.dead
+  );
+}
+
 //Api for Recursive Call of Comments
 export async function getCommentTree(id: number): Promise<any | null> {
   const comment = await getItem(id);
   if (!comment || comment.deleted || comment.dead) return null;
 
-  let replies = [];
+  let replies: any[] = [];
   if (comment.kids && comment.kids.length > 0) {
     replies = await Promise.all(comment.kids.map(getCommentTree));
   }

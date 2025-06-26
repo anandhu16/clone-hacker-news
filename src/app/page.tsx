@@ -1,7 +1,7 @@
 "use client";
 import StoryCard from "@/components/StoryCard";
 import { useStories } from "@/hooks/useStories";
-import { StoryType } from "./enums/enums";
+import { StoryType } from "../enums/enums";
 import { daysDiff } from "./utils/utils";
 import PageLayout from "@/components/PageLayout";
 import { useAppShell } from "./AppShellContext";
