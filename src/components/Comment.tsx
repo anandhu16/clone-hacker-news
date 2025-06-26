@@ -37,7 +37,7 @@ export default function Comment({ id }: { id: number }) {
           <div className="border-b border-gray-200 w-full h-px"></div>
         </div>
       ) : (
-        <div className="py-3 w-full max-w-screen-md">
+        <div className="py-3 w-full max-md:max-w-screen max-w-screen-md">
           <div className="text-xs text-muted-foreground mb-1 flex justify-between px-2">
             <span>{comment?.by}</span>
             <span>{formatTime(comment?.time)}</span>
@@ -47,13 +47,13 @@ export default function Comment({ id }: { id: number }) {
               {comment?.title}
             </div>
           )}
-          <div className="prose mb-2 px-2">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: decodeHTMLEntities(comment?.text),
-              }}
-            />
-          </div>
+
+          <div
+            className="w-full px-4 break-words text-base leading-relaxed"
+            dangerouslySetInnerHTML={{
+              __html: decodeHTMLEntities(comment?.text),
+            }}
+          />
 
           {comment?.kids?.length && (
             <button
