@@ -18,7 +18,6 @@ export default function Comment({ id }: { id: number }) {
     async function fetchComment() {
       if (id) {
         const comment = await getItem(id);
-        // console.log(comment);
         setComment(comment);
         setIsLoadingComment(false);
       }
@@ -29,15 +28,15 @@ export default function Comment({ id }: { id: number }) {
   return (
     <>
       {isLoadingComment ? (
-        <div className="py-3 w-full max-w-screen-md animate-pulse">
+        <div className="py-3 w-full max-md:max-w-screen max-w-screen-md content-visibility-auto animate-pulse">
           <div className="h-4 bg-gray-200 rounded w-1/4 mb-2 mx-2" />
           <div className="h-3 bg-gray-100 rounded w-1/2 mb-2 mx-2" />
           <div className="h-3 bg-gray-100 rounded w-3/4 mb-2 mx-2" />
           <div className="h-8 bg-gray-200 rounded w-32 mb-4 mx-2" />
           <div className="border-b border-gray-200 w-full h-px"></div>
         </div>
-      ) : (
-        <div className="py-3 w-full max-md:max-w-screen max-w-screen-md">
+      ) : comment?.deleted ? null : (
+        <div className="py-3 w-full max-md:max-w-screen max-w-screen-md content-visibility-auto">
           <div className="text-xs text-muted-foreground mb-1 flex justify-between px-2">
             <span>{comment?.by}</span>
             <span>{formatTime(comment?.time)}</span>

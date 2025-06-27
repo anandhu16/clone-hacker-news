@@ -3,7 +3,6 @@ import Comment from "@/components/Comment";
 import PageLayout from "@/components/PageLayout";
 import React, { useEffect, useState } from "react";
 import { getItem } from "../api/api";
-import { daysDiff } from "../utils/utils";
 
 export default function StoryPage({
   params,
@@ -36,7 +35,7 @@ export default function StoryPage({
 
   return (
     <PageLayout>
-      <div className="px-3 py-2.5 flex flex-col items-center w-full overflow-y-auto overflow-x-hidden">
+      <div className="px-3 py-2.5 flex flex-col items-center w-full overflow-y-auto overflow-x-hidden content-visibility-auto">
         {story && (
           <>
             <div
@@ -83,7 +82,7 @@ export default function StoryPage({
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="w-full max-md:max-w-screen max-w-screen-md space-y-4">
               {story?.kids?.map((c: any) => (
                 <Comment key={c} id={c} />
               ))}

@@ -10,7 +10,6 @@ import PageLayout from "@/components/PageLayout";
 export default function page() {
   const { stories, loading } = useStories(StoryType.New);
 
-  console.log(stories);
   return (
     <PageLayout>
       <div className="flex flex-col gap-2.5 p-3 overflow-y-auto">

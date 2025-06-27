@@ -1,10 +1,9 @@
 "use client";
+import PageLayout from "@/components/PageLayout";
 import StoryCard from "@/components/StoryCard";
 import { useStories } from "@/hooks/useStories";
 import { StoryType } from "../enums/enums";
 import { daysDiff } from "./utils/utils";
-import PageLayout from "@/components/PageLayout";
-import { useAppShell } from "./AppShellContext";
 
 export default function Home() {
   const { stories, loading } = useStories(StoryType.Top);
